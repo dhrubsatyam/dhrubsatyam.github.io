@@ -1,44 +1,21 @@
-:root {
-  --bg: #f4f6f9;
-  --text: #333;
-  --accent: #0056d6;
-  --card-bg: #fff;
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0; padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  transition: all 0.3s ease;
+.designation {
+  font-size: 1.2rem;
+  margin-top: -0.5rem;
+  color: #ffeb3b;
 }
-header {
-  background: linear-gradient(120deg, #0056d6, #0096ff);
+.social-links {
+  margin: 1rem 0;
+}
+.social-links a {
+  margin-right: 15px;
+  font-size: 1.5rem;
   color: #fff;
-  padding: 2rem 0;
+  transition: color 0.3s;
 }
-header h1 span { color: #ffeb3b; }
-header nav a {
-  color: #fff; margin: 0 10px; text-decoration: none; font-weight: 500;
+.social-links a:hover {
+  color: #ffeb3b;
 }
-header nav a:hover { color: #ffeb3b; }
-#theme-toggle { background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
-.header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-.profile-img { border-radius: 50%; width: 150px; border: 4px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-
-.container { width: 85%; margin: auto; padding: 2rem 0; }
-h2 { color: var(--accent); margin-bottom: 1rem; }
-
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-.skills-grid div { background: var(--card-bg); padding: 1rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-
-.timeline .job { margin-bottom: 2rem; background: var(--card-bg); padding: 1rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-.job h3 { margin-top: 0; color: var(--accent); }
-
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-.card { background: var(--card-bg); padding: 1rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.card:hover { transform: translateY(-5px) scale(1.02); }
-
-footer { text-align: center; background: #222; color: #fff; padding: 1rem; margin-top: 2rem; }
-
-/* Dark mode */
-.dark { --bg: #121212; --text: #eee; --card-bg: #1e1e1e; --accent: #29b6f6; }
