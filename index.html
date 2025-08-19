@@ -3,133 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhrub Satyam | Data Science & AI</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <title>Dhrub Satyam | Data Scientist & AI Expert</title>
+  <style>
+    /* === RESET & THEME === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d1117;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+    a { color: #58a6ff; text-decoration: none; }
+
+    /* === HERO SECTION === */
+    #hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    #network-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      background: #0d1117;
+    }
+    #hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    #hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+    }
+    #hero-content h2 {
+      font-size: 1.6rem;
+      margin-top: 10px;
+      color: #58a6ff;
+      height: 40px;
+    }
+
+    /* === SECTION STYLE === */
+    section {
+      padding: 80px 12%;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #58a6ff;
+    }
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(88,166,255,0.2);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #161b22;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container header-flex">
-      <div>
-        <h1 class="typing">Hi, I’m <span>Dhrub Satyam</span></h1>
-        <p>Lead Data Scientist | AI & ML Expert | Mentor</p>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="assets/resume.pdf" target="_blank">Resume</a>
-          <button id="theme-toggle">🌙</button>
-        </nav>
-      </div>
-      <div>
-        <img src="assets/profile.jpg" alt="Dhrub Satyam" class="profile-img" data-aos="zoom-in">
-      </div>
-    </div>
-  </header>
 
-  <!-- About -->
-  <section id="about" class="container" data-aos="fade-right">
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="network-bg"></canvas>
+    <div id="hero-content">
+      <h1>Dhrub Satyam</h1>
+      <h2><span id="typing"></span></h2>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a Data Science and AI leader with a proven track record of turning complex business challenges into
-      scalable solutions that deliver measurable results. Skilled in machine learning, deep learning, NLP, and
-      Generative AI (LLMs), I focus on creating intelligent systems that improve decision-making, optimize processes,
-      and generate business impact. I thrive on mentoring, fostering innovation, and building high-performing teams.
+      I am a <b>Lead Data Scientist</b> with deep expertise in AI, ML, and analytics, 
+      transforming complex business challenges into scalable solutions. 
+      With a strong background in <b>recommendation systems, supply chain optimization, NLP, and deep learning</b>, 
+      I bring a results-driven approach and a passion for mentoring teams in data science & AI innovation.
     </p>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="container" data-aos="fade-left">
-    <h2>Technical Skills</h2>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
     <div class="skills-grid">
-      <div><h3>Machine Learning</h3><p>Logistic Regression, KNN, Decision Trees, Random Forest, SVC, SVR</p></div>
-      <div><h3>Deep Learning</h3><p>CNN, RNN, LSTM, Transformers, GANs, Attention Mechanisms, TensorFlow, PyTorch</p></div>
-      <div><h3>NLP</h3><p>TF-IDF, NER, POS Tagging, Topic Modelling, BERT, GPT, RoBERTa, XLNet, T5</p></div>
-      <div><h3>GenAI & LLMs</h3><p>LangChain, LlamaIndex, OpenAI GPT, Gemini Pro, Claude, RAG, Fine-tuning</p></div>
-      <div><h3>Data & Tools</h3><p>Python, R, SQL, Tableau, PowerBI, Matplotlib, Seaborn, GCP, AWS (SageMaker, Lambda, EC2, S3)</p></div>
-      <div><h3>Optimization</h3><p>Knapsack, Linear/Integer Programming, Multi-objective Optimization</p></div>
-      <div><h3>Databases</h3><p>PostgreSQL, SQL Server, MongoDB, Google BigQuery, Pinecone</p></div>
-      <div><h3>Other</h3><p>Streamlit Dashboards, FastAPI, Palantir Foundry, Vector DBs</p></div>
+      <div class="card">Python, SQL, R</div>
+      <div class="card">Deep Learning (CNN, RNN, Transformers, GANs)</div>
+      <div class="card">NLP, LLMs, RAG, Agents</div>
+      <div class="card">Machine Learning & Optimization</div>
+      <div class="card">Airflow, GCP, AWS, Kafka</div>
+      <div class="card">Streamlit, Plotly, FastAPI</div>
+      <div class="card">Neo4j, Network Graphs</div>
+      <div class="card">Mentorship & Data Science Training</div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="container" data-aos="zoom-in">
+  <!-- EXPERIENCE -->
+  <section id="experience">
     <h2>Experience</h2>
-    <div class="timeline">
-      <div class="job">
-        <h3>Lead Data Scientist – Lowe’s <span>(2024–Present)</span></h3>
-        <ul>
-          <li>Engineered ATP predictive analytics system (90%+ accuracy) → $40M+ incremental revenue.</li>
-          <li>Optimized inventory turnover, reducing stockouts by 30%.</li>
-          <li>Built trailer priority optimization algorithm → reduced yard dwell time by 15%.</li>
-          <li>Architected AI-powered competitive pricing platform (Hackathon Winner).</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Lead Consultant (Data Science) – HCLTech <span>(2022–2024)</span></h3>
-        <ul>
-          <li>Enhanced product recommendation engine → improved engagement & revenue.</li>
-          <li>Developed price optimization solutions across business units.</li>
-          <li>Built LLM-powered POCs for automating text data analysis.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Senior Data Scientist II – Deloitte USI <span>(2021–2022)</span></h3>
-        <ul>
-          <li>Led 10+ member DS/ML/Visualization team for in-house products.</li>
-          <li>Won 2nd Prize in Global Conversational AI Challenge 2021 (30+ teams).</li>
-          <li>Developed recommender systems using Amazon Personalize, AWS Glue, Lambda.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>Senior Analyst – Infosys <span>(2020–2021)</span></h3>
-        <ul>
-          <li>Developed predictive models for car demand & marketing budget optimization.</li>
-          <li>Applied time-series forecasting, XGBoost, and regression models.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <h3>ML Engineer & Analyst – Accenture <span>(2014–2020)</span></h3>
-        <ul>
-          <li>Built 900+ ML models for Telstra to optimize ad spend → media coverage in ITNews & CMO.</li>
-          <li>Developed fraud detection systems (credit card fraud, cheating detection) → saved millions.</li>
-          <li>Built dashboards & complex queries for data extraction/analysis.</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Lead Data Scientist – Lowe’s India</h3>
+      <p>2021 – Present</p>
+      <p>
+        Leading AI-driven initiatives for supply chain optimization, demand forecasting, and personalization. 
+        Built ML pipelines, deployed large-scale recommendation engines, and drove adoption of NLP-based search.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Senior Data Scientist – Deloitte</h3>
+      <p>2019 – 2021</p>
+      <p>
+        Developed advanced analytics solutions for clients across industries, including churn prediction models, 
+        deep learning solutions, and NLP-driven insights.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Data Scientist – Infosys / Accenture / HCLTech</h3>
+      <p>2016 – 2019</p>
+      <p>
+        Worked on data analytics, visualization, and early-stage AI adoption for enterprise clients. 
+        Built predictive models, automated workflows, and optimized business processes.
+      </p>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="container" data-aos="fade-up">
-    <h2>Projects & Competitions</h2>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="card" data-aos="flip-left">
-        <h3>🏆 Global AI Challenge 2021</h3>
-        <p>2nd Prize in Deloitte’s Global Conversational AI Challenge among 30+ teams.</p>
+      <div class="card">
+        <h3>Supply Chain Network Optimization</h3>
+        <p>Designed and deployed ML & MILP-based optimization to minimize stockouts and optimize trailer selection.</p>
       </div>
-      <div class="card" data-aos="flip-up">
-        <h3>Kaggle</h3>
-        <p>“Predicting Future Sales” → Ranked Top 10% out of thousands of participants.</p>
+      <div class="card">
+        <h3>Toxic Comment Classification</h3>
+        <p>Implemented deep learning + pre-trained embeddings to classify multi-label toxic comments.</p>
       </div>
-      <div class="card" data-aos="flip-right">
-        <h3>Lowe’s Hackathon</h3>
-        <p>AI-powered competitive pricing system using NLP & Computer Vision.</p>
+      <div class="card">
+        <h3>Semantic Chatbot</h3>
+        <p>Built an intelligent chatbot using NLP, embeddings, and retrieval-based AI to simulate human-like conversations.</p>
+      </div>
+      <div class="card">
+        <h3>Data Science Instructor</h3>
+        <p>Designed and delivered 40+ hour deep learning & NLP courses with hands-on projects for aspiring data scientists.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer data-aos="fade-up">
-    <p>📧 dsatyam1@gmail.com | 
-       <a href="https://linkedin.com/in/dhrubsatyam" target="_blank">LinkedIn</a> | 
-       <a href="https://github.com/dhrubsatyam" target="_blank">GitHub</a></p>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Dhrub Satyam | Built with ❤️ & AI
   </footer>
 
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
+  <!-- === JS for Typing + AI Network BG === -->
+  <script>
+    // Typing Effect
+    const roles = ["Lead Data Scientist", "Mentor", "AI & ML Enthusiast"];
+    let roleIndex = 0, charIndex = 0, currentText = "";
+    const typingElement = document.getElementById("typing");
+    function type() {
+      if (charIndex < roles[roleIndex].length) {
+        currentText += roles[roleIndex].charAt(charIndex);
+        typingElement.textContent = currentText;
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+    function erase() {
+      if (charIndex > 0) {
+        currentText = roles[roleIndex].substring(0, charIndex-1);
+        typingElement.textContent = currentText;
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        roleIndex = (roleIndex+1) % roles.length;
+        setTimeout(type, 500);
+      }
+    }
+    type();
+
+    // Glowing Node Background
+    const canvas = document.getElementById("network-bg");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let nodes = [];
+    for (let i=0; i<60; i++) {
+      nodes.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*0.5,
+        vy: (Math.random()-0.5)*0.5,
+        r: 2+Math.random()*3
+      });
+    }
+    function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for (let node of nodes) {
+        ctx.beginPath();
+        ctx.arc(node.x,node.y,node.r,0,Math.PI*2);
+        ctx.fillStyle = "rgba(88,166,255,0.8)";
+        ctx.shadowColor = "rgba(88,166,255,0.8)";
+        ctx.shadowBlur = 15;
+        ctx.fill();
+        node.x += node.vx;
+        node.y += node.vy;
+        if (node.x<0||node.x>canvas.width) node.vx*=-1;
+        if (node.y<0||node.y>canvas.height) node.vy*=-1;
+      }
+      for (let i=0;i<nodes.length;i++) {
+        for (let j=i+1;j<nodes.length;j++) {
+          let dx=nodes[i].x-nodes[j].x;
+          let dy=nodes[i].y-nodes[j].y;
+          let dist=Math.sqrt(dx*dx+dy*dy);
+          if (dist<150) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x,nodes[i].y);
+            ctx.lineTo(nodes[j].x,nodes[j].y);
+            ctx.strokeStyle="rgba(88,166,255,0.1)";
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+    window.addEventListener("resize", ()=>{
+      canvas.width=window.innerWidth;
+      canvas.height=window.innerHeight;
+    });
+  </script>
 </body>
 </html>
