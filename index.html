@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhrub Satyam | Data Science & AI</title>
   <link rel="stylesheet" href="style.css">
-  <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
-      <h1 data-aos="fade-down">Dhrub Satyam</h1>
-      <p data-aos="fade-up">Lead Data Scientist | Data Science & AI Expert</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="assets/resume.pdf" target="_blank">Resume</a>
-        <button id="theme-toggle">🌙</button>
-      </nav>
+    <div class="container header-flex">
+      <div>
+        <h1 class="typing">Hi, I’m <span>Dhrub Satyam</span></h1>
+        <p>Lead Data Scientist | AI & ML Expert | Mentor</p>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="assets/resume.pdf" target="_blank">Resume</a>
+          <button id="theme-toggle">🌙</button>
+        </nav>
+      </div>
+      <div>
+        <img src="assets/profile.jpg" alt="Dhrub Satyam" class="profile-img" data-aos="zoom-in">
+      </div>
     </div>
   </header>
 
@@ -29,56 +33,90 @@
   <section id="about" class="container" data-aos="fade-right">
     <h2>About Me</h2>
     <p>
-      I am a Data Science and AI leader with expertise in building scalable ML/AI solutions, optimization frameworks,
-      and intelligent recommendation systems. I thrive on mentoring teams and transforming data into measurable business impact.
+      I am a Data Science and AI leader with a proven track record of turning complex business challenges into
+      scalable solutions that deliver measurable results. Skilled in machine learning, deep learning, NLP, and
+      Generative AI (LLMs), I focus on creating intelligent systems that improve decision-making, optimize processes,
+      and generate business impact. I thrive on mentoring, fostering innovation, and building high-performing teams.
     </p>
   </section>
 
   <!-- Skills -->
   <section id="skills" class="container" data-aos="fade-left">
     <h2>Technical Skills</h2>
-    <ul>
-      <li><b>Machine Learning:</b> Regression, Classification, Clustering</li>
-      <li><b>Deep Learning:</b> CNN, RNN, LSTM, Transformers, GANs</li>
-      <li><b>NLP:</b> NER, Topic Modelling, GPT, BERT, T5</li>
-      <li><b>GenAI & LLM:</b> LangChain, LlamaIndex, RAG, Fine-tuning</li>
-      <li><b>Tools:</b> Python, SQL, Tableau, AWS, GCP</li>
-    </ul>
+    <div class="skills-grid">
+      <div><h3>Machine Learning</h3><p>Logistic Regression, KNN, Decision Trees, Random Forest, SVC, SVR</p></div>
+      <div><h3>Deep Learning</h3><p>CNN, RNN, LSTM, Transformers, GANs, Attention Mechanisms, TensorFlow, PyTorch</p></div>
+      <div><h3>NLP</h3><p>TF-IDF, NER, POS Tagging, Topic Modelling, BERT, GPT, RoBERTa, XLNet, T5</p></div>
+      <div><h3>GenAI & LLMs</h3><p>LangChain, LlamaIndex, OpenAI GPT, Gemini Pro, Claude, RAG, Fine-tuning</p></div>
+      <div><h3>Data & Tools</h3><p>Python, R, SQL, Tableau, PowerBI, Matplotlib, Seaborn, GCP, AWS (SageMaker, Lambda, EC2, S3)</p></div>
+      <div><h3>Optimization</h3><p>Knapsack, Linear/Integer Programming, Multi-objective Optimization</p></div>
+      <div><h3>Databases</h3><p>PostgreSQL, SQL Server, MongoDB, Google BigQuery, Pinecone</p></div>
+      <div><h3>Other</h3><p>Streamlit Dashboards, FastAPI, Palantir Foundry, Vector DBs</p></div>
+    </div>
   </section>
 
   <!-- Experience -->
   <section id="experience" class="container" data-aos="zoom-in">
     <h2>Experience</h2>
-    <div class="job">
-      <h3>Lead Data Scientist – Lowe’s (2024–Present)</h3>
-      <p>Built predictive analytics systems generating $40M+ revenue and improving accuracy to 90%+.</p>
+    <div class="timeline">
+      <div class="job">
+        <h3>Lead Data Scientist – Lowe’s <span>(2024–Present)</span></h3>
+        <ul>
+          <li>Engineered ATP predictive analytics system (90%+ accuracy) → $40M+ incremental revenue.</li>
+          <li>Optimized inventory turnover, reducing stockouts by 30%.</li>
+          <li>Built trailer priority optimization algorithm → reduced yard dwell time by 15%.</li>
+          <li>Architected AI-powered competitive pricing platform (Hackathon Winner).</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Lead Consultant (Data Science) – HCLTech <span>(2022–2024)</span></h3>
+        <ul>
+          <li>Enhanced product recommendation engine → improved engagement & revenue.</li>
+          <li>Developed price optimization solutions across business units.</li>
+          <li>Built LLM-powered POCs for automating text data analysis.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Senior Data Scientist II – Deloitte USI <span>(2021–2022)</span></h3>
+        <ul>
+          <li>Led 10+ member DS/ML/Visualization team for in-house products.</li>
+          <li>Won 2nd Prize in Global Conversational AI Challenge 2021 (30+ teams).</li>
+          <li>Developed recommender systems using Amazon Personalize, AWS Glue, Lambda.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Senior Analyst – Infosys <span>(2020–2021)</span></h3>
+        <ul>
+          <li>Developed predictive models for car demand & marketing budget optimization.</li>
+          <li>Applied time-series forecasting, XGBoost, and regression models.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>ML Engineer & Analyst – Accenture <span>(2014–2020)</span></h3>
+        <ul>
+          <li>Built 900+ ML models for Telstra to optimize ad spend → media coverage in ITNews & CMO.</li>
+          <li>Developed fraud detection systems (credit card fraud, cheating detection) → saved millions.</li>
+          <li>Built dashboards & complex queries for data extraction/analysis.</li>
+        </ul>
+      </div>
     </div>
-    <div class="job">
-      <h3>Lead Consultant – HCLTech (2022–2024)</h3>
-      <p>Implemented recommendation systems, pricing optimization, and LLM-based solutions.</p>
-    </div>
-    <div class="job">
-      <h3>Senior Data Scientist II – Deloitte (2021–2022)</h3>
-      <p>Led 10+ member team; won 2nd prize in Global Conversational AI Challenge 2021.</p>
-    </div>
-    <p><a href="assets/resume.pdf" target="_blank">View full CV →</a></p>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="container">
-    <h2 data-aos="fade-up">Projects & Competitions</h2>
+  <section id="projects" class="container" data-aos="fade-up">
+    <h2>Projects & Competitions</h2>
     <div class="projects-grid">
       <div class="card" data-aos="flip-left">
         <h3>🏆 Global AI Challenge 2021</h3>
-        <p>2nd Prize among 30+ teams for Conversational AI.</p>
-      </div>
-      <div class="card" data-aos="flip-right">
-        <h3>Kaggle</h3>
-        <p>Predicting Future Sales – Top 10% of participants.</p>
+        <p>2nd Prize in Deloitte’s Global Conversational AI Challenge among 30+ teams.</p>
       </div>
       <div class="card" data-aos="flip-up">
+        <h3>Kaggle</h3>
+        <p>“Predicting Future Sales” → Ranked Top 10% out of thousands of participants.</p>
+      </div>
+      <div class="card" data-aos="flip-right">
         <h3>Lowe’s Hackathon</h3>
-        <p>AI-powered competitive pricing system using NLP + CV.</p>
+        <p>AI-powered competitive pricing system using NLP & Computer Vision.</p>
       </div>
     </div>
   </section>
@@ -90,12 +128,8 @@
        <a href="https://github.com/dhrubsatyam" target="_blank">GitHub</a></p>
   </footer>
 
-  <!-- JS -->
   <script src="script.js"></script>
-  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
