@@ -4,66 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhrub Satyam</title>
-  <!-- Futuristic fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Exo 2', sans-serif;
       background: #0a0a0f;
-      color: #fff;
+      color: white;
       overflow-x: hidden;
     }
 
-    /* Hero Section (compact) */
-    .hero {
-      position: relative;
-      min-height: 45vh; /* smaller hero */
+    /* Hero Section */
+    #hero {
+      height: 70vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding-top: 5rem;
+      background: linear-gradient(to bottom right, #1e3a8a, #4338ca, #6d28d9);
+      position: relative;
       z-index: 2;
     }
-
-    .hero h1 {
+    #hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 800;
       letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-      color: #00e5ff;
-      text-shadow: 0 0 15px #00e5ff;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+    #hero h2 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
     }
 
-    .titles {
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-      color: #ffffffcc;
-      text-shadow: 0 0 8px #00ff99;
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Scroll Arrow */
-    .scroll-down {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      color: #00e5ff;
-      text-decoration: none;
-      animation: bounce 1.5s infinite;
+    /* Typing Effect */
+    .typing-text {
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      display: inline-block;
+      animation: typing 4s steps(40, end) infinite, blink .75s step-end infinite;
+    }
+    @keyframes typing {
+      0% { width: 0 }
+      40% { width: 100% }
+      60% { width: 100% }
+      100% { width: 0 }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    /* Content Sections */
+    section.content {
+      padding: 3rem 10%;
+      position: relative;
+      z-index: 2;
+    }
+    section.content h2 {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+    section.content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6rem;
+      color: #ddd;
     }
 
-    /* Background Canvas */
+    /* Background canvas */
     #bgCanvas {
       position: fixed;
       top: 0;
@@ -73,41 +92,24 @@
       z-index: 0;
       background: #0a0a0f;
     }
-
-    /* Content Sections */
-    .content {
-      position: relative;
-      z-index: 2;
-      padding: 3rem 10%;
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 1rem;
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffcc;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      line-height: 1.6rem;
-    }
   </style>
 </head>
 <body>
-  <!-- Glowing nodes background -->
+  <!-- Glowing AI nodes background -->
   <canvas id="bgCanvas"></canvas>
 
-  <!-- Hero (compact) -->
-  <section class="hero">
-    <h1>Dhrub Satyam</h1>
-    <div class="titles">
-      Lead Data Scientist • Mentor • AI & ML Expert
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <!-- Name -->
+      <h1>Dhrub Satyam</h1>
+
+      <!-- Typing Effect for Roles -->
+      <h2 class="typing-text"></h2>
     </div>
-    <a href="#about" class="scroll-down">▼ Scroll Down ▼</a>
   </section>
 
-  <!-- Content -->
+  <!-- About -->
   <section id="about" class="content">
     <h2>About Me</h2>
     <p>
@@ -115,13 +117,19 @@
       Experienced in building scalable data-driven systems and mentoring teams 
       to deliver impactful solutions across industries.
     </p>
+  </section>
 
+  <!-- Skills -->
+  <section id="skills" class="content">
     <h2>Skills</h2>
     <p>
       Python, Deep Learning, NLP, LLMs, Optimization, GCP, Airflow, Kafka, FastAPI, 
       Streamlit, Plotly, Neo4j, MySQL, Git, Cloud Deployment.
     </p>
+  </section>
 
+  <!-- Projects -->
+  <section id="projects" class="content">
     <h2>Projects</h2>
     <p>
       - End-to-end ML systems for supply chain optimization.<br>
@@ -131,14 +139,31 @@
   </section>
 
   <script>
-    // Futuristic glowing nodes background
+    // --- Typing Effect ---
+    const roles = [
+      "a Lead Data Scientist",
+      "a Mentor",
+      "an AI & ML Enthusiast",
+      "a Problem Solver"
+    ];
+    let i = 0;
+    const typingText = document.querySelector(".typing-text");
+
+    function updateRole() {
+      typingText.textContent = roles[i];
+      i = (i + 1) % roles.length;
+    }
+    setInterval(updateRole, 4000);
+    updateRole();
+
+    // --- Glowing Nodes Background ---
     const canvas = document.getElementById('bgCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     let nodes = [];
-    for (let i = 0; i < 150; i++) { // denser network
+    for (let i = 0; i < 150; i++) {
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
