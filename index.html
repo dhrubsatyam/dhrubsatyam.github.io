@@ -20,38 +20,38 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section */
+    /* Hero Section (compact) */
     .hero {
       position: relative;
-      height: 100vh;
+      min-height: 45vh; /* smaller hero */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding-top: 5rem;
       z-index: 2;
     }
 
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       color: #00e5ff;
       text-shadow: 0 0 15px #00e5ff;
     }
 
     .titles {
-      font-size: 1.5rem;
-      line-height: 2.2rem;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
       color: #ffffffcc;
       text-shadow: 0 0 8px #00ff99;
     }
 
     /* Scroll Arrow */
     .scroll-down {
-      position: absolute;
-      bottom: 20px;
+      margin-top: 1.5rem;
       font-size: 1rem;
       color: #00e5ff;
       text-decoration: none;
@@ -60,7 +60,7 @@
 
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
 
     /* Background Canvas */
@@ -74,11 +74,11 @@
       background: #0a0a0f;
     }
 
-    /* Content Section */
+    /* Content Sections */
     .content {
       position: relative;
       z-index: 2;
-      padding: 4rem 10%;
+      padding: 3rem 10%;
     }
 
     h2 {
@@ -98,13 +98,11 @@
   <!-- Glowing nodes background -->
   <canvas id="bgCanvas"></canvas>
 
-  <!-- Hero -->
+  <!-- Hero (compact) -->
   <section class="hero">
     <h1>Dhrub Satyam</h1>
     <div class="titles">
-      Lead Data Scientist <br>
-      Mentor <br>
-      AI & ML Expert
+      Lead Data Scientist • Mentor • AI & ML Expert
     </div>
     <a href="#about" class="scroll-down">▼ Scroll Down ▼</a>
   </section>
@@ -140,7 +138,7 @@
     canvas.height = window.innerHeight;
 
     let nodes = [];
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 150; i++) { // denser network
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -170,11 +168,11 @@
           const dx = n.x - nodes[j].x;
           const dy = n.y - nodes[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 120) {
+          if (distance < 130) {
             ctx.beginPath();
             ctx.moveTo(n.x, n.y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = 'rgba(0, 255, 200, 0.2)';
+            ctx.strokeStyle = 'rgba(0, 255, 200, 0.25)';
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
