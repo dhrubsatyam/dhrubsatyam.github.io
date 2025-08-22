@@ -48,13 +48,85 @@
   <!-- Skills -->
   <section id="skills" class="container" data-aos="fade-left">
     <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-bar" data-skill="Machine Learning" data-percent="90"></div>
-      <div class="skill-bar" data-skill="Deep Learning" data-percent="85"></div>
-      <div class="skill-bar" data-skill="NLP" data-percent="80"></div>
-      <div class="skill-bar" data-skill="GenAI & LLM" data-percent="75"></div>
-      <div class="skill-bar" data-skill="Tools" data-percent="95"></div>
-      <div class="skill-bar" data-skill="Optimization" data-percent="70"></div>
+    <div class="skills-tiles">
+      <div class="skill-tile">
+        <h3>#Machine Learning/DL</h3>
+        <ul>
+          <li>Classification: Logistic Regression, K-NN, Decision Tree (CART, C4.5), Random Forest, SVC</li>
+          <li>Regression: Linear Regression, Decision Trees, Random Forest, SVR</li>
+          <li>Clustering: K-Means, Hierarchical, DB Scan</li>
+          <li>Dimensionality Reduction: PCA, LDA</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Deep Learning</h3>
+        <ul>
+          <li>CNN, RNN, LSTM, GAN, Attention, Transformers</li>
+          <li>TensorFlow, PyTorch, Keras</li>
+          <li>Recommender Systems: Collaborative, Content-Based, Deep Learning Retrieval, Ranking Models</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Text Analytics/NLP</h3>
+        <ul>
+          <li>Basics: TF-IDF, Sentiment Analytics, Stemming, Lemmatization, POS Tagging</li>
+          <li>Advanced: NER, Topic Modelling, Transformers, Word Embeddings, GPT, BERT, BiLSTM, RoBERTa, T5, XLNet</li>
+          <li>Language Models: Fine-tuning, Transfer Learning, Multi-lingual Models</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#GenAI & LLM</h3>
+        <ul>
+          <li>Frameworks: LangChain, LlamaIndex, Streamlit, Flask</li>
+          <li>LLM Models: Llama2, Mistral, OpenAI GPT, Gemini Pro, Claude</li>
+          <li>Techniques: Prompt Engineering, RAG, Fine-tuning, Model Optimization</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Tools/Languages</h3>
+        <ul>
+          <li>Languages: Python, R, Hive, Pig, SQL</li>
+          <li>Visualization: Tableau, PowerBI, Matplotlib, Seaborn, ggplot2</li>
+          <li>Databases: SQL Server, PostgreSQL, MongoDB, BigQuery, SQLAlchemy, PyMySQL, PyMongo</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Statistics</h3>
+        <ul>
+          <li>EDA, Inferential Analytics, Hypothesis Testing (t-test, z-test, chi-square, ANOVA, ANCOVA)</li>
+          <li>Outlier Detection, Sampling, Correlation, Covariance</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Cloud & Infrastructure</h3>
+        <ul>
+          <li>AWS (SageMaker, Lambda, Personalize, EC2, S3), GCP, DAG Orchestration</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Vector DB</h3>
+        <ul>
+          <li>ChromaDB, Pinecone</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Mathematics</h3>
+        <ul>
+          <li>Probability, Vector Calculus, Linear Algebra</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Analytics Platforms</h3>
+        <ul>
+          <li>Palantir Foundry, Streamlit Dashboard Development</li>
+        </ul>
+      </div>
+      <div class="skill-tile">
+        <h3>#Optimization & Operations Research</h3>
+        <ul>
+          <li>Knapsack, Linear Programming, Integer Programming, Multi-objective Optimization</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -148,7 +220,8 @@
       typeSpeed: 60,
       backSpeed: 30,
       backDelay: 1200,
-      loop: true
+      loop: true,
+      smartBackspace: true // Fixes animation issue
     });
 
     // Theme toggle
@@ -156,16 +229,6 @@
       document.body.classList.toggle('dark-theme');
       this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
     };
-
-    // Skill bars animation
-    document.querySelectorAll('.skill-bar').forEach(function(bar) {
-      let percent = bar.getAttribute('data-percent');
-      let skill = bar.getAttribute('data-skill');
-      bar.innerHTML = `<span>${skill}</span><div class="bar"><div class="fill" style="width:0"></div></div><span class="percent">${percent}%</span>`;
-      setTimeout(() => {
-        bar.querySelector('.fill').style.width = percent + '%';
-      }, 500);
-    });
   </script>
 </body>
 </html>
