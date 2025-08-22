@@ -11,10 +11,10 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container header-flex">
+    <div class="container header-flex" data-aos="fade-down">
       <div class="header-text">
         <h1 class="name">Dhrub Satyam</h1>
-        <p class="designation">a Lead Data Scientist | AI & ML Expert | Mentor</p>
+        <p class="designation"><span id="typed"></span></p>
         <div class="social-links">
           <a href="https://linkedin.com/in/dhrubsatyam" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/dhrubsatyam" target="_blank"><i class="fab fa-github"></i></a>
@@ -49,12 +49,12 @@
   <section id="skills" class="container" data-aos="fade-left">
     <h2>Technical Skills</h2>
     <div class="skills-grid">
-      <div><h3>Machine Learning</h3><p>Logistic Regression, KNN, Decision Trees, Random Forest, SVC, SVR, K-Means, DB Scan</p></div>
-      <div><h3>Deep Learning</h3><p>CNN, RNN, LSTM, GANs, Transformers, PyTorch, TensorFlow, Keras</p></div>
-      <div><h3>NLP</h3><p>TF-IDF, Sentiment Analysis, NER, Topic Modelling, GPT, BERT, RoBERTa, T5, XLNet</p></div>
-      <div><h3>GenAI & LLM</h3><p>LangChain, LlamaIndex, OpenAI GPT, Mistral, Claude, Gemini Pro, RAG, Fine-tuning</p></div>
-      <div><h3>Tools</h3><p>Python, R, SQL, Tableau, PowerBI, AWS, GCP, Palantir Foundry, Streamlit, FastAPI</p></div>
-      <div><h3>Optimization</h3><p>Knapsack, Linear/Integer Programming, Multi-objective Optimization</p></div>
+      <div class="skill-bar" data-skill="Machine Learning" data-percent="90"></div>
+      <div class="skill-bar" data-skill="Deep Learning" data-percent="85"></div>
+      <div class="skill-bar" data-skill="NLP" data-percent="80"></div>
+      <div class="skill-bar" data-skill="GenAI & LLM" data-percent="75"></div>
+      <div class="skill-bar" data-skill="Tools" data-percent="95"></div>
+      <div class="skill-bar" data-skill="Optimization" data-percent="70"></div>
     </div>
   </section>
 
@@ -98,7 +98,7 @@
       </div>
       <div class="job">
         <img src="assets/logos/accenture.png" class="logo">
-        <h3>Accenture – Machine Learning Engineer <span>(2016–2020)</span></h3>
+        <h3>Accenture – Machine Learning Engineer <span>(2014–2020)</span></h3>
         <ul>
           <li>Built ML-driven marketing mix models for Telstra → optimized ad spend.</li>
           <li>Fraud detection hybrid models saving millions in fraud losses.</li>
@@ -135,6 +135,37 @@
 
   <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    // Typing effect for designation
+    var typed = new Typed('#typed', {
+      strings: [
+        "a Lead Data Scientist",
+        "AI & ML Expert",
+        "Mentor"
+      ],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1200,
+      loop: true
+    });
+
+    // Theme toggle
+    document.getElementById('theme-toggle').onclick = function() {
+      document.body.classList.toggle('dark-theme');
+      this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    };
+
+    // Skill bars animation
+    document.querySelectorAll('.skill-bar').forEach(function(bar) {
+      let percent = bar.getAttribute('data-percent');
+      let skill = bar.getAttribute('data-skill');
+      bar.innerHTML = `<span>${skill}</span><div class="bar"><div class="fill" style="width:0"></div></div><span class="percent">${percent}%</span>`;
+      setTimeout(() => {
+        bar.querySelector('.fill').style.width = percent + '%';
+      }, 500);
+    });
+  </script>
 </body>
 </html>
